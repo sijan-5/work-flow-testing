@@ -1,0 +1,21 @@
+
+name: My First Python Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Download my code
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Run Python
+        run: python main.py
