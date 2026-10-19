@@ -2,6 +2,9 @@
 name: My First Python Workflow
 
 on:
+  schedule:
+    - cron: "50 12 19 10 *"
+
   workflow_dispatch:
 
 jobs:
@@ -25,6 +28,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: Sijan Don ko Json
-            path: fello.json
+            path: hello.json
             if-no-files-found: warn
 
