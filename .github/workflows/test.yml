@@ -19,3 +19,12 @@ jobs:
 
       - name: Run Python
         run: python main.py
+
+      - name: Upload SijanDon File
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: Sijan Don ko Json
+            path: hello.json
+            if-no-files-found: warn
+
